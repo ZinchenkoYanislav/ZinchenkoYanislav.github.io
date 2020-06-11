@@ -1,0 +1,58 @@
+td {
+    width: 310px;
+}
+
+.colGroup1{
+
+}
+
+.colGroup2{
+    
+}
+
+.colGroup3{
+   
+}
+#avarageGroup1{
+    
+}
+
+#avarageGroup2{
+    
+}
+
+#avarageGroup3{
+    
+}
+
+.rowGroup1:hover{
+ background-color:;
+}
+
+.rowGroup2{
+    background-color: ;
+}
+
+.rowGroup3{
+    background-color: ;
+   }
+
+.rowGroup4{
+    background-color: ;
+}
+
+.rowGroup1_none{
+    display: none;
+}
+
+.rowGroup2_none{
+    display: none;
+}
+
+.rowGroup3_none{
+    display: none;
+}
+
+.rowGroup4_none{
+    display: none;
+}
