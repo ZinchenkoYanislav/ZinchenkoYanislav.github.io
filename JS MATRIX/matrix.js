@@ -1,22 +1,31 @@
-let table = document.querySelector('#tbody');
-let arr = [ [10, 2, 3], [4, 5, 6], [7, 8, 9] ];
-fill_Tbody(table, arr)
+let tbody = document.querySelector('#tbody');
+let arr1 = [ [10, 2, 3], [4, 5, 6], [7, 8, 9,] ];
+fill_Tbody (tbody, arr1);
+console.log(tbody)
 
 function fill_Tbody(table, arr) {
     for(let i = 0; i < arr.length; i++) {
         let tr = document.createElement('tr');
 
-        for(let j = 0; j < arr.length[i]; j++){
+        for(let j = 0; j < arr[i].length; j++){
             let td = document.createElement('td');
             td.innerHTML = arr[i][j];
-            tr.appendChild(td)
+            tr.appendChild(td);
         }
 
         table.appendChild(tr)
     }
 }
 
+const Arr_Tbody = Array.from(tbody);
 
+for (let i = 0; i < tbody.length; i++){
+    tbody[i].addEventListener('click', function(){
+        let input = document.createElement('input');
+        input.value = this.innerHTML; 
+        this.appendChild(input);
+    })
+}
 
 
 // const table = document.getElementById("mytab");
