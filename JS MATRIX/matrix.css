@@ -1,12 +1,9 @@
 table td {
     padding: 20px;
     border: 1px solid black;
+    width: 50px;
 }
 
-
-td {
-    width: 310px;
-}
 
 .rowGroup1_none{
     display: none;

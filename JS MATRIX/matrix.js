@@ -1,3 +1,4 @@
+let mytab = document.querySelector('#mytab');
 let table = document.querySelector('#table');
 let tbody = document.querySelector('#tbody');
 let btnGenerate = document.querySelector('#btnGenerate');
@@ -6,26 +7,68 @@ btnGenerate.addEventListener('click', function(){
     let colsInput = document.querySelector('#colsInput').value;
     let rowsInput = document.querySelector('#rowsInput').value;
     createTable(tbody, colsInput, rowsInput);
+    
 
 })
+
+function randomInteger(min, max) {
+   
+    let rand = min - 0.5 + Math.random() * (max - min + 1);
+    return Math.round(rand);
+  }
 
 
 function createTable(parents, cols, rows) {
     for(let i=0; i < rows; i++){
         let tr = document.createElement('tr');
-
+        if (i == 0){
+            counter = -1;
+        }
+        
+       
         for(let j=0; j < cols; j++){
             let td = document.createElement('td');
             tr.appendChild(td);
             
+            counter++
+
+            if(i === 0 && j === 0){
+                td.innerHTML = '#'
+            }
+            else if(i === 0 && j > i && j != cols - 1){
+                td.innerHTML = counter
+                
+            }
+            else if(i === 0 && j === cols - 1){
+                td.innerHTML = 'сумма'       
+            }
+
+            else if (i > j && j === 0 && i !=rows - 1){
+                td.innerHTML = counter/cols
+            }
+
+            else if(j === 0 && i === rows - 1){
+                td.innerHTML = 'среднее'       
+            }
+
+            else  if(i > 0 && j > 0 && i < rows - 1 && j < cols - 1)  {
+                td.innerHTML = randomInteger(100, 999)
+            }
+
+            else if (i > 0 && j === cols -1 && i != rows - 1){
+                td.innerHTML = 'Вывод суммы'
+            }
+            else if (j > 0 && i === rows - 1 && j != cols - 1 ){
+                td.innerHTML = 'Вывод среднее значение'
+            }
+            
         }
 
         parents.appendChild(tr)
-        parents[0][0].innerHtml('#');
-        parents[0][1].innerHtml('1');
+        
     }
+    console.log(parents)
 }   
-
 
 
 // let tbody = document.querySelector('#tbody');
