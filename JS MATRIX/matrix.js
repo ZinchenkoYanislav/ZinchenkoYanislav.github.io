@@ -1,31 +1,61 @@
+let table = document.querySelector('#table');
 let tbody = document.querySelector('#tbody');
-let arr1 = [ [10, 2, 3], [4, 5, 6], [7, 8, 9,] ];
-fill_Tbody (tbody, arr1);
-console.log(tbody)
+let btnGenerate = document.querySelector('#btnGenerate');
 
-function fill_Tbody(table, arr) {
-    for(let i = 0; i < arr.length; i++) {
+btnGenerate.addEventListener('click', function(){
+    let colsInput = document.querySelector('#colsInput').value;
+    let rowsInput = document.querySelector('#rowsInput').value;
+    createTable(tbody, colsInput, rowsInput);
+
+})
+
+
+function createTable(parents, cols, rows) {
+    for(let i=0; i < rows; i++){
         let tr = document.createElement('tr');
 
-        for(let j = 0; j < arr[i].length; j++){
+        for(let j=0; j < cols; j++){
             let td = document.createElement('td');
-            td.innerHTML = arr[i][j];
             tr.appendChild(td);
+            
         }
 
-        table.appendChild(tr)
+        parents.appendChild(tr)
+        parents[0][0].innerHtml('#');
+        parents[0][1].innerHtml('1');
     }
-}
+}   
 
-const Arr_Tbody = Array.from(tbody);
 
-for (let i = 0; i < tbody.length; i++){
-    tbody[i].addEventListener('click', function(){
-        let input = document.createElement('input');
-        input.value = this.innerHTML; 
-        this.appendChild(input);
-    })
-}
+
+// let tbody = document.querySelector('#tbody');
+// let arr1 = [ [10, 2, 3], [4, 5, 6], [7, 8, 9,] ];
+// fill_Tbody (tbody, arr1);
+// console.log(tbody)
+
+// function fill_Tbody(table, arr) {
+//     for(let i = 0; i < arr.length; i++) {
+//         let tr = document.createElement('tr');
+
+//         for(let j = 0; j < arr[i].length; j++){
+//             let td = document.createElement('td');
+//             td.innerHTML = arr[i][j];
+//             tr.appendChild(td);
+//         }
+
+//         table.appendChild(tr)
+//     }
+// }
+
+// const ArrTbody = Array.from(tbody);
+
+// for (let i = 0; i < tbody.length; i++){
+//     tbody[i].addEventListener('click', function(){
+//         let input = document.createElement('input');
+//         input.value = this.innerHTML; 
+//         this.appendChild(input);
+//     })
+// }
 
 
 // const table = document.getElementById("mytab");
